@@ -29,7 +29,7 @@ Bu proje, Java dili kullanılarak geliştirilmiş **konsol tabanlı bir ATM (Aut
 ```
 ATM-java/
 ├── src/
-│   └── AtmKopya.java
+│   └── Atm.java
 ├── atmsifre.txt
 ├── transferhesap.txt
 ├── .gitignore
