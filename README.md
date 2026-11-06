@@ -29,14 +29,20 @@ Bu proje, Java dili kullanılarak geliştirilmiş **konsol tabanlı bir ATM (Aut
 ```
 ATM-java/
 ├── src/
-│   └── Atm.java
+│   └── ATM.java
+├── gui/
+│   ├── src/
+│   │   └── Main.java
+│   ├── atmsifre.txt
+│   └── transferhesap.txt
 ├── atmsifre.txt
 ├── transferhesap.txt
 ├── .gitignore
 └── README.md
 ```
 
-* `AtmKopya.java` : Ana uygulama dosyası
+* `src/ATM.java` : Konsol sürümünün ana dosyası
+* `gui/` : Aynı uygulamanın Swing arayüzlü sürümü (aşağıya bakın)
 * `atmsifre.txt` : Kullanıcı şifre bilgilerinin tutulduğu dosya
 * `transferhesap.txt` : Transfer işlemleri için kullanılan hesap verileri
 
@@ -57,22 +63,34 @@ ATM-java/
 git clone https://github.com/mhmdcngz/ATM-java.git
 ```
 
-2. Proje klasörüne girin:
+2. Proje klasörüne girin (txt dosyaları burada arandığı için programı bu klasörden çalıştırın):
 
 ```bash
-cd ATM-java/src
+cd ATM-java
 ```
 
 3. Java dosyasını derleyin:
 
 ```bash
-javac AtmKopya.java
+javac -encoding UTF-8 -d out src/ATM.java
 ```
 
 4. Programı çalıştırın:
 
 ```bash
-java AtmKopya
+java -cp out ATM
+```
+
+---
+
+## 🖥 Arayüzlü Sürüm (Swing)
+
+`gui/` klasöründe aynı uygulamanın Java Swing ile yazılmış pencereli sürümü bulunur. Şifre girişi, bakiye sorgulama, para yatırma/çekme ve transfer işlemleri butonlarla yapılır. 3 hatalı şifre denemesinde kart bloke edilir.
+
+```bash
+cd ATM-java/gui
+javac -encoding UTF-8 -d out src/Main.java
+java -cp out Main
 ```
 
 ---
